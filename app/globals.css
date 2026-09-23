@@ -1,0 +1,563 @@
+@import url("https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── KICKWISE Light & Dark Theme — Google RGB Design Tokens ──────────── */
+:root {
+  /* Surface / Background */
+  --kw-bg: #f8f9ff;
+  --kw-surface: #ffffff;
+  --kw-surface-2: #f1f3f9;
+  --kw-surface-3: #e8ebf8;
+  --kw-border: #dde1f0;
+  --kw-border-dim: #e8ebf8;
+
+  /* Text */
+  --kw-muted: #8f95b2;
+  --kw-subtext: #5f6484;
+  --kw-text: #1a1d2e;
+  --kw-heading: #0d0f1c;
+
+  /* Google RGB Brand Colors */
+  --kw-blue: #4285f4;
+  --kw-red: #ea4335;
+  --kw-yellow: #fbbc04;
+  --kw-green: #34a853;
+
+  /* Accent Palette */
+  --kw-accent: #4285f4;
+  --kw-accent-light: #d2e3fc;
+  --kw-accent-dim: #1a73e8;
+  --kw-positive: #34a853;
+  --kw-positive-light: #d4edda;
+  --kw-negative: #ea4335;
+  --kw-negative-light: #fce8e6;
+  --kw-warn: #fbbc04;
+  --kw-warn-light: #fef9e3;
+  --kw-purple: #9334e6;
+  --kw-purple-light: #ede7f6;
+
+  /* Shadow */
+  --kw-shadow-sm: 0 1px 3px rgba(60,64,67,0.12), 0 1px 2px rgba(60,64,67,0.08);
+  --kw-shadow-md: 0 4px 12px rgba(60,64,67,0.14), 0 2px 4px rgba(60,64,67,0.08);
+  --kw-shadow-lg: 0 10px 30px rgba(60,64,67,0.18), 0 4px 8px rgba(60,64,67,0.10);
+}
+
+.dark {
+  /* Surface / Background */
+  --kw-bg: #090a0f;
+  --kw-surface: #12141d;
+  --kw-surface-2: #1a1e2b;
+  --kw-surface-3: #23283a;
+  --kw-border: #23283a;
+  --kw-border-dim: #1c202e;
+
+  /* Text */
+  --kw-muted: #8b92a5;
+  --kw-subtext: #a8b0c6;
+  --kw-text: #f3f4f6;
+  --kw-heading: #ffffff;
+
+  /* Dark mode accent tints */
+  --kw-accent: #60a5fa;
+  --kw-accent-light: rgba(66, 133, 244, 0.18);
+  --kw-accent-dim: #8ab4f8;
+  --kw-positive: #4ade80;
+  --kw-positive-light: rgba(52, 168, 83, 0.18);
+  --kw-negative: #f87171;
+  --kw-negative-light: rgba(234, 67, 53, 0.18);
+  --kw-warn: #fbbf24;
+  --kw-warn-light: rgba(251, 188, 4, 0.18);
+  --kw-purple: #c084fc;
+  --kw-purple-light: rgba(147, 52, 230, 0.18);
+
+  /* Shadow */
+  --kw-shadow-sm: 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+  --kw-shadow-md: 0 4px 12px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.3);
+  --kw-shadow-lg: 0 10px 30px rgba(0,0,0,0.6), 0 4px 8px rgba(0,0,0,0.4);
+}
+
+/* ─── Aurora Background Variables ────────────────────────────────── */
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --transparent: transparent;
+}
+
+.dark {
+  --white: #ffffff;
+  --black: #000000;
+  --transparent: transparent;
+}
+
+/* ─── Base ──────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  border-color: var(--kw-border);
+}
+
+html {
+  font-size: 14px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--kw-bg);
+  color: var(--kw-text);
+  font-family: "Faculty Glyphic", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ─── Typography ────────────────────────────────────────────────── */
+.font-swanky,
+.font-heading {
+  font-family: "Press Start 2P", cursive, monospace;
+  letter-spacing: 0.02em;
+  line-height: 1.55;
+}
+
+h1, h2, h3, .heading-xl, .heading-lg {
+  font-family: "Press Start 2P", cursive, monospace;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.text-telemetry {
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--kw-muted);
+}
+
+.text-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--kw-muted);
+}
+
+.text-value {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--kw-text);
+}
+
+.text-accent {
+  color: var(--kw-accent);
+}
+
+/* ─── Google RGB Gradient Text ──────────────────────────────────── */
+.text-google-rgb {
+  background: linear-gradient(90deg, #4285f4 0%, #ea4335 30%, #fbbc04 60%, #34a853 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-google-blue { color: #4285f4; }
+.text-google-red  { color: #ea4335; }
+.text-google-yellow { color: #fbbc04; }
+.text-google-green { color: #34a853; }
+
+/* ─── Surfaces ──────────────────────────────────────────────────── */
+.kw-surface {
+  background: var(--kw-surface);
+  border: 1px solid var(--kw-border);
+}
+
+.kw-surface-2 {
+  background: var(--kw-surface-2);
+  border: 1px solid var(--kw-border-dim);
+}
+
+.kw-panel {
+  background: var(--kw-surface);
+  border: 1px solid var(--kw-border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--kw-shadow-sm);
+}
+
+.kw-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4285f4, #ea4335, #fbbc04, #34a853);
+  opacity: 0.7;
+  border-radius: 16px 16px 0 0;
+}
+
+/* ─── Google Material Chip ──────────────────────────────────────── */
+.kw-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.kw-chip-blue {
+  background: var(--kw-accent-light);
+  color: var(--kw-accent);
+  border: 1px solid rgba(66,133,244,0.2);
+}
+
+.kw-chip-green {
+  background: var(--kw-positive-light);
+  color: var(--kw-positive);
+  border: 1px solid rgba(52,168,83,0.2);
+}
+
+.kw-chip-red {
+  background: var(--kw-negative-light);
+  color: var(--kw-negative);
+  border: 1px solid rgba(234,67,53,0.2);
+}
+
+.kw-chip-purple {
+  background: var(--kw-purple-light);
+  color: var(--kw-purple);
+  border: 1px solid rgba(147,52,230,0.2);
+}
+
+/* ─── Google light card with colored top bar ────────────────────── */
+.google-card {
+  background: var(--kw-surface);
+  border: 1px solid var(--kw-border);
+  border-radius: 16px;
+  box-shadow: var(--kw-shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.google-card:hover {
+  box-shadow: var(--kw-shadow-md);
+  transform: translateY(-1px);
+}
+
+/* Metric card colored accent border variants */
+.google-card-blue::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: #4285f4;
+}
+
+.google-card-red::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: #ea4335;
+}
+
+.google-card-green::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: #34a853;
+}
+
+.google-card-yellow::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: #fbbc04;
+}
+
+.google-card-purple::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: #9334e6;
+}
+
+/* ─── Probability bar ───────────────────────────────────────────── */
+.prob-bar {
+  height: 6px;
+  border-radius: 4px;
+  background: var(--kw-border);
+  overflow: hidden;
+  position: relative;
+}
+
+.prob-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── SHAP contribution bars ────────────────────────────────────── */
+.shap-positive {
+  background: linear-gradient(90deg, rgba(52,168,83,0.12), rgba(52,168,83,0.04));
+  border-left: 3px solid var(--kw-positive);
+  border-radius: 0 8px 8px 0;
+}
+
+.shap-negative {
+  background: linear-gradient(90deg, rgba(234,67,53,0.12), rgba(234,67,53,0.04));
+  border-left: 3px solid var(--kw-negative);
+  border-radius: 0 8px 8px 0;
+}
+
+/* ─── Radar chart ───────────────────────────────────────────────── */
+.radar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Select styling ────────────────────────────────────────────── */
+.kw-select {
+  background: var(--kw-surface) !important;
+  border: 1px solid var(--kw-border) !important;
+  color: var(--kw-text) !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 0.875rem !important;
+  border-radius: 8px !important;
+  box-shadow: var(--kw-shadow-sm) !important;
+}
+
+.kw-select:focus {
+  border-color: var(--kw-accent) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(66,133,244,0.18) !important;
+}
+
+/* ─── Button styles ─────────────────────────────────────────────── */
+.btn-run {
+  position: relative;
+  background: #4285f4;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(66,133,244,0.4);
+}
+
+.btn-run:hover {
+  background: #1a73e8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(66,133,244,0.45);
+}
+
+.btn-run:disabled {
+  background: var(--kw-surface-2);
+  color: var(--kw-muted);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-run:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* ─── Processing overlay ────────────────────────────────────────── */
+.processing-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(248, 249, 255, 0.93);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+/* ─── Glyph matrix (light) ──────────────────────────────────────── */
+.glyph-matrix {
+  position: absolute;
+  inset: 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--kw-accent);
+  opacity: 0.05;
+  overflow: hidden;
+  pointer-events: none;
+  display: grid;
+  gap: 2px;
+  user-select: none;
+}
+
+/* ─── Circular progress ─────────────────────────────────────────── */
+.circular-progress-track {
+  stroke: var(--kw-border);
+}
+
+.circular-progress-fill {
+  stroke: var(--kw-accent);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--kw-surface-2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--kw-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--kw-muted);
+}
+
+/* ─── RGB gradient glow effects (subtle, Google-flavored) ───────── */
+.glow-blue {
+  box-shadow: 0 0 24px rgba(66,133,244,0.25), 0 4px 12px rgba(66,133,244,0.15);
+}
+
+.glow-green {
+  box-shadow: 0 0 24px rgba(52,168,83,0.25), 0 4px 12px rgba(52,168,83,0.15);
+}
+
+.glow-red {
+  box-shadow: 0 0 24px rgba(234,67,53,0.25), 0 4px 12px rgba(234,67,53,0.15);
+}
+
+/* ─── Sidebar nav item ──────────────────────────────────────────── */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--kw-subtext);
+  border: 1px solid transparent;
+}
+
+.nav-item:hover {
+  background: var(--kw-surface-2);
+  color: var(--kw-text);
+}
+
+.nav-item.active {
+  background: var(--kw-accent-light);
+  color: var(--kw-accent);
+  border-color: rgba(66,133,244,0.25);
+  font-weight: 600;
+}
+
+/* ─── Grid pattern ──────────────────────────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(66,133,244,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(66,133,244,0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ─── Animations ────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rgbShimmer {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulseBlue {
+  0%, 100% { box-shadow: 0 0 8px rgba(66,133,244,0.25); }
+  50%       { box-shadow: 0 0 24px rgba(66,133,244,0.55); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-rgb-shimmer {
+  background: linear-gradient(270deg, #4285f4, #ea4335, #fbbc04, #34a853, #4285f4);
+  background-size: 400% 400%;
+  animation: rgbShimmer 6s ease infinite;
+}
+
+.animate-pulse-blue {
+  animation: pulseBlue 2s ease-in-out infinite;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out both;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 4s linear infinite;
+}
+
+/* ─── Reduced motion ────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
