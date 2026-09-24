@@ -54,7 +54,9 @@ Thumbs.db
 # Vercel
 .vercel
 
-# Brag video launch artifacts
+# Brag & Marketing media artifacts
 brag-output/
 brag-output*/
+linkedin-pack/
+linkedin-pack*/
 *.mp4
